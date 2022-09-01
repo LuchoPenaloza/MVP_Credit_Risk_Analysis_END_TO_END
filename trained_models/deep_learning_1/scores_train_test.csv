@@ -1,0 +1,6 @@
+training_time, 209.31216168403625
+roc_auc_train_score, 0.6428513251595772
+accuracy_train_score, 0.738575
+inference_time, 0.24386072158813477
+roc_auc_test_score, 0.6393500974357953
+accuracy_test_score, 0.7394

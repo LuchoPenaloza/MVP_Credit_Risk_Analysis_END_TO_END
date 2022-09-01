@@ -1,0 +1,18 @@
+path_X_train: "/home/app/src/data/pre_process/X_train.pkl"
+path_X_test: "/home/app/src/data/pre_process/X_test.pkl"
+path_y_train: "/home/app/src/data/pre_process/y_train.pkl"
+path_y_test: "/home/app/src/data/pre_process/y_test.pkl"
+
+
+# The following part has to be modified with the training ML model you want
+
+path_to_save: "/home/app/src/trained_models/lightgbm"
+
+model: "lightgbm"     # Here you can choose between: catboost, lightgbm, randomforest, xgboost and ensemble
+
+hyperparameter_grid:
+    n_jobs: [-1]
+    random_state: [64]
+    learning_rate: [0.001, 0.01, 0.1, 0.5, 1]
+    num_leaves: [11, 21, 31, 51, 71]
+    min_child_samples: [10, 15, 20, 25, 30]

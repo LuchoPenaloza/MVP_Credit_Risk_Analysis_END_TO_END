@@ -1,0 +1,23 @@
+path_X_train: "/home/app/src/data/pre_process/X_train.pkl"
+path_X_test: "/home/app/src/data/pre_process/X_test.pkl"
+path_y_train: "/home/app/src/data/pre_process/y_train.pkl"
+path_y_test: "/home/app/src/data/pre_process/y_test.pkl"
+
+
+# The following part has to be modified for the training DL model you want
+
+path_to_save: "/home/app/src/trained_models/deep_learning_1"
+
+model:
+    neurons: 30
+    activation_mode: "relu"
+    dropout_rate: 0
+    loss_type: "binary_crossentropy"
+    optimizer_type: "Adam"
+    callback_mode: "Activate"
+
+data:
+    batch_size: [500, 1000]
+    epochs: [30, 40]
+    optimizer__learning_rate: [0.0001]
+    random_state: [64]

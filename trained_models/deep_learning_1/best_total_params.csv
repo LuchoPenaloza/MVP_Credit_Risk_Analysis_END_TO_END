@@ -1,0 +1,17 @@
+model, <keras.engine.sequential.Sequential object at 0x7f8a179e8790>
+build_fn, None
+warm_start, False
+random_state, 64
+optimizer, Adam
+loss, binary_crossentropy
+metrics, None
+batch_size, 500
+validation_batch_size, None
+verbose, 0
+callbacks, [<keras.callbacks.EarlyStopping object at 0x7f8a179d8f10>]
+validation_split, 0.0
+shuffle, True
+run_eagerly, False
+epochs, 30
+optimizer__learning_rate, 0.0001
+class_weight, None

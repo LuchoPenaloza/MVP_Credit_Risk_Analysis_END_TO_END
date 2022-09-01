@@ -1,0 +1,13 @@
+path_X_train: "/home/app/src/data/pre_process/X_train.pkl"
+path_X_test: "/home/app/src/data/pre_process/X_test.pkl"
+path_y_train: "/home/app/src/data/pre_process/y_train.pkl"
+path_y_test: "/home/app/src/data/pre_process/y_test.pkl"
+
+
+# The following part has to be modified with the training ML model you want
+
+path_to_save: "/home/app/src/trained_models/ensemble"
+
+model: "ensemble"     # Here you can choose between: catboost, lightgbm, randomforest, xgboost and ensemble
+
+hyperparameter_grid:
