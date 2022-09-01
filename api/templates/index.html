@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <title>Application</title>
+
+    <style>
+        header {
+            text-align: center;
+            font-weight: bold;
+            color: #548235;
+            padding-top: 1.5em;
+            padding-bottom: 1.5em;
+            background-color:#F4F9F1;
+        }
+
+        form {
+            color: #2F75B5;
+            font-weight: bold;
+            padding-top: 1.25em;
+            padding-left: 2.5em;
+            padding-bottom: 1.25em;
+            background-color:#DDEBF7;
+        }
+
+        form input, form select {
+            border-radius: 0.5em;
+            border: 1.5px solid #548235;
+            background-color: #F2F2F2;
+            padding: 0.25em;
+        }
+
+        .final_button {
+            border: 0;
+            color: white;
+            font-weight: bold;
+            background-color: #2F75B5;
+            padding: 10px;
+            width: 125px;
+            border-radius: 0.5em;
+            transition: 0.5s;
+        }
+
+        .final_button:hover {
+            background-color: #548235;
+        }
+
+        footer {
+            text-align: right;
+            padding-top: 1em;
+            padding-bottom: 1em;
+            padding-right: 2em;
+            color: #548235;
+            background-color:#F4F9F1;
+        }
+    </style>
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1068.0" data-gr-ext-installed="">
+    <header>
+        <h1>CREDIT RISK SCORE - MVP APPLICATION</h1>
+    </header>
+
+    <form method="POST" action="/application">
+
+        <p>
+            <label for="full_name">Full name:</label>
+            <input type="text" name="full_name" maxlength="60" id="full_name" required>
+        </p>
+
+        <p>
+            <label for="DNI">National identifying number:</label>
+            <input type="number" name="DNI" id="DNI" required>
+        </p>
+
+        <p>
+            <label for="id_clerk_type">Clerk type:</label>
+            <select name="clerk_type" id="id_clerk_type">
+                <option value="C" selected="">C</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_payment_day">Payment day:</label>
+            <select name="payment_day" id="id_payment_day" required>
+                <option value="1" selected="">1</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="25">25</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_application_submission_type">Application submission type:</label>
+            <select name="application_submission_type" id="id_application_submission_type" required>
+                <option value="Web" selected="">Web</option>
+                <option value="Carga">Carga</option>
+                <option value="Other">Other</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_quant_additional_cards">Quant additional cards:</label>
+            <select name="quant_additional_cards" id="id_quant_additional_cards">
+                <option value="1" selected="">1</option>
+                <option value="2">2</option>
+                <option value="NULL">NULL</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_postal_address_type">Postal address type:</label>
+            <select name="postal_address_type" id="id_postal_address_type" required>
+                <option value="1" selected="">1</option>
+                <option value="2">2</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_sex">Sex:</label>
+            <select name="sex" id="id_sex" required>
+                <option value="F" selected="">F</option>
+                <option value="M">M</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_marital_status">Marital status:</label>
+            <select name="marital_status" id="id_marital_status" required>
+                <option value="0" selected="">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_quant_of_dependants">Quant of dependants:</label>
+            <input type="number" name="quant_of_dependants" min="0" id="id_quant_of_dependants" required>
+        </p>
+
+        <p>
+            <label for="id_education_level_1">Education level:</label>
+            <select name="education_level_1" id="id_education_level_1" required>
+                <option value="0" selected="">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="Other">Other</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_state_of_birth">State of birth:</label>
+            <select name="state_of_birth" id="id_state_of_birth" required>
+                <option value="AC" selected="">AC</option>
+                <option value="AL">AL</option>
+                <option value="AP">AP</option>
+                <option value="AM">AM</option>
+                <option value="BA">BA</option>
+                <option value="CE">CE</option>
+                <option value="ES">ES</option>
+                <option value="GO">GO</option>
+                <option value="MA">MA</option>
+                <option value="MT">MT</option>
+                <option value="MS">MS</option>
+                <option value="MG">MG</option>
+                <option value="PA">PA</option>
+                <option value="PB">PB</option>
+                <option value="PR">PR</option>
+                <option value="PE">PE</option>
+                <option value="PI">PI</option>
+                <option value="RJ">RJ</option>
+                <option value="RN">RN</option>
+                <option value="RS">RS</option>
+                <option value="RO">RO</option>
+                <option value="RR">RR</option>
+                <option value="SC">SC</option>
+                <option value="SP">SP</option>
+                <option value="SE">SE</option>
+                <option value="TO">TO</option>
+                <option value="DF">DF</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_city_of_birth">City of birth:</label>
+            <input type="text" name="city_of_birth" maxlength="30" id="id_city_of_birth" required>
+        </p>
+
+        <p>
+            <label for="id_nacionality">Nacionality:</label>
+            <select name="nacionality" id="id_nacionality" required>
+                <option value="0">0</option>
+                <option value="1" selected="">1</option>
+                <option value="2">2</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_residencial_state">Residence state:</label>
+            <select name="residencial_state" id="id_residencial_state" required>
+                <option value="AC" selected="">AC</option>
+                <option value="AL">AL</option>
+                <option value="AP">AP</option>
+                <option value="AM">AM</option>
+                <option value="BA">BA</option>
+                <option value="CE">CE</option>
+                <option value="ES">ES</option>
+                <option value="GO">GO</option>
+                <option value="MA">MA</option>
+                <option value="MT">MT</option>
+                <option value="MS">MS</option>
+                <option value="MG">MG</option>
+                <option value="PA">PA</option>
+                <option value="PB">PB</option>
+                <option value="PR">PR</option>
+                <option value="PE">PE</option>
+                <option value="PI">PI</option>
+                <option value="RJ">RJ</option>
+                <option value="RN">RN</option>
+                <option value="RS">RS</option>
+                <option value="RO">RO</option>
+                <option value="RR">RR</option>
+                <option value="SC">SC</option>
+                <option value="SP">SP</option>
+                <option value="SE">SE</option>
+                <option value="TO">TO</option>
+                <option value="DF">DF</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_residencial_city">Residencial city:</label>
+            <input type="text" name="residencial_city" maxlength="30" id="id_residencial_city" required>
+        </p>
+
+        <p>
+            <label for="id_residencial_borough">Residencial borough:</label>
+            <input type="text" name="residencial_borough" maxlength="30" id="id_residencial_borough">
+        </p>
+
+        <p>
+            <label for="id_flag_residencial_phone">Flag residencial phone:</label>
+            <select name="flag_residencial_phone" id="id_flag_residencial_phone" required>
+                <option value="1">Y</option>
+                <option value="0">N</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_residencial_phone_area_code">Residencial phone area code:</label>
+            <select name="residencial_phone_area_code" id="id_residencial_phone_area_code" required>
+                <option value="11">11-Sao Paulo</option>
+                <option value="12">12-Taubate</option>
+                <option value="13">13-Sao Vicente</option>
+                <option value="14">14-Bauru</option>
+                <option value="15">15-Sorocaba</option>
+                <option value="16">16-Ribeirao Preto</option>
+                <option value="17">17-Sao Jose de Rio Preto</option>
+                <option value="18">18-Presidente Prudente</option>
+                <option value="19">19-Piracicaba</option>
+                <option value="21">21-Sao Joao de Meriti</option>
+                <option value="24">24-Volta Redonda</option>
+                <option value="27">27-Vitoria</option>
+                <option value="31">31-Contagem</option>
+                <option value="32">32-Juiz de Fora</option>
+                <option value="34">34-Uberlandia</option>
+                <option value="38">38-Montes Claros</option>
+                <option value="41">41-Curitiba</option>
+                <option value="43">43-Londrina</option>
+                <option value="44">44-Maringa</option>
+                <option value="45">45-Foz do Iguacu</option>
+                <option value="47">47-Joinville</option>
+                <option value="48">48-Florianopolis</option>
+                <option value="51">51-Porto Alegre</option>
+                <option value="53">53-Pelotas</option>
+                <option value="54">54-Caxias do Soul</option>
+                <option value="55">55-Santa Maria</option>
+                <option value="61">61-Brasilia</option>
+                <option value="62">62-Santarem</option>
+                <option value="65">65-Varzea Grande</option>
+                <option value="67">67-Campo Grande</option>
+                <option value="68">68-Rio Branco</option>
+                <option value="69">69-Porto Velho</option>
+                <option value="71">71-Salvador</option>
+                <option value="73">73-Ilheus</option>
+                <option value="75">75-Feira de Santana</option>
+                <option value="77">77-Vitoria da Conquista</option>
+                <option value="79">79-Aracaju</option>
+                <option value="81">81-Recife</option>
+                <option value="82">82-Maceio</option>
+                <option value="83">83-Joao Pessoa</option>
+                <option value="84">84-Natal</option>
+                <option value="86">86-Teresina</option>
+                <option value="88">88-Fortaleza</option>
+                <option value="91">91-Goiania</option>
+                <option value="92">92-Manaus</option>
+                <option value="95">95-Boa Vista</option>
+                <option value="96">96-Macapa</option>
+                <option value="98">98-Sao Luis</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_residence_type">Residence type:</label>
+            <select name="residence_type" id="id_residence_type" required>
+                <option value="0" selected="">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_months_in_residence">Months in residence:</label>
+            <input type="number" name="months_in_residence" min="0" id="id_months_in_residence" required>
+        </p>
+
+        <p>
+            <label for="id_flag_mobile_phone">Flag mobile phone:</label>
+            <select name="flag_mobile_phone" id="id_flag_mobile_phone" required>
+                <option value="1">Y</option>
+                <option value="0">N</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_flag_email">Flag email:</label>
+            <select name="flag_email" id="id_flag_email" required>
+                <option value="0">0</option>
+                <option value="1">1</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_personal_monthly_income">Personal monthly income:</label>
+            <input type="number" name="personal_monthly_income" step="any" id="id_personal_monthly_income" required>
+        </p>
+
+        <p>
+            <label for="id_other_incomes">Other incomes:</label>
+            <input type="number" name="other_incomes" step="any" id="id_other_incomes" required>
+        </p>
+
+        <p>
+            <label for="id_flag_visa">Flag visa:</label>
+            <select name="flag_visa" id="id_flag_visa" required>
+                <option value="0">0</option>
+                <option value="1">1</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_flag_mastercard">Flag mastercard:</label>
+            <select name="flag_mastercard" id="id_flag_mastercard" required>
+                <option value="0">0</option>
+                <option value="1">1</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_flag_diners">Flag diners:</label>
+            <select name="flag_diners" id="id_flag_diners" required>
+                <option value="0">0</option>
+                <option value="1">1</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_flag_american_express">Flag american express:</label>
+            <select name="flag_american_express" id="id_flag_american_express" required>
+                <option value="0">0</option>
+                <option value="1">1</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_flag_other_cards">Flag other cards:</label>
+            <select name="flag_other_cards" id="id_flag_other_cards" required>
+                <option value="0">0</option>
+                <option value="1">1</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_quant_banking_accounts">Quant banking accounts:</label>
+            <select name="quant_banking_accounts" id="id_quant_banking_accounts" required>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_quant_special_banking_accounts">Quant special banking accounts:</label>
+            <select name="quant_special_banking_accounts" id="id_quant_special_banking_accounts" required>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_personal_assets_value">Personal assets value:</label>
+            <input type="number" name="personal_assets_value" step="any" id="id_personal_assets_value" required>
+        </p>
+
+        <p>
+            <label for="id_quant_cars">Flag cars:</label>
+            <select name="quant_cars" id="id_quant_cars" required>
+                <option value="0">0</option>
+                <option value="1">1</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_company">Company:</label>
+            <select name="company" id="id_company" required>
+                <option value="1">Y</option>
+                <option value="0">N</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_professional_state">Professional state:</label>
+            <select name="professional_state" id="id_professional_state" required>
+                <option value="N.A.">N.A.</option>
+                <option value="AC" selected="">AC</option>
+                <option value="AL">AL</option>
+                <option value="AP">AP</option>
+                <option value="AM">AM</option>
+                <option value="BA">BA</option>
+                <option value="CE">CE</option>
+                <option value="ES">ES</option>
+                <option value="GO">GO</option>
+                <option value="MA">MA</option>
+                <option value="MT">MT</option>
+                <option value="MS">MS</option>
+                <option value="MG">MG</option>
+                <option value="PA">PA</option>
+                <option value="PB">PB</option>
+                <option value="PR">PR</option>
+                <option value="PE">PE</option>
+                <option value="PI">PI</option>
+                <option value="RJ">RJ</option>
+                <option value="RN">RN</option>
+                <option value="RS">RS</option>
+                <option value="RO">RO</option>
+                <option value="RR">RR</option>
+                <option value="SC">SC</option>
+                <option value="SP">SP</option>
+                <option value="SE">SE</option>
+                <option value="TO">TO</option>
+                <option value="DF">DF</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_professional_city">Professional city:</label>
+            <input type="text" name="professional_city" maxlength="30" id="id_professional_city" required>
+        </p>
+
+        <p>
+            <label for="id_professional_borough">Professional borough:</label>
+            <input type="text" name="professional_borough" maxlength="30" id="id_professional_borough">
+        </p>
+
+        <p>
+            <label for="id_flag_professional_phone">Flag professional phone:</label>
+            <select name="flag_professional_phone" id="id_flag_professional_phone" required>
+                <option value="1">Y</option>
+                <option value="0">N</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_professional_phone_area_code">Professional phone area code:</label>
+            <select name="professional_phone_area_code" id="id_professional_phone_area_code" required>
+                <option value="11">11-Sao Paulo</option>
+                <option value="12">12-Taubate</option>
+                <option value="13">13-Sao Vicente</option>
+                <option value="14">14-Bauru</option>
+                <option value="15">15-Sorocaba</option>
+                <option value="16">16-Ribeirao Preto</option>
+                <option value="17">17-Sao Jose de Rio Preto</option>
+                <option value="18">18-Presidente Prudente</option>
+                <option value="19">19-Piracicaba</option>
+                <option value="21">21-Sao Joao de Meriti</option>
+                <option value="24">24-Volta Redonda</option>
+                <option value="27">27-Vitoria</option>
+                <option value="31">31-Contagem</option>
+                <option value="32">32-Juiz de Fora</option>
+                <option value="34">34-Uberlandia</option>
+                <option value="38">38-Montes Claros</option>
+                <option value="41">41-Curitiba</option>
+                <option value="43">43-Londrina</option>
+                <option value="44">44-Maringa</option>
+                <option value="45">45-Foz do Iguacu</option>
+                <option value="47">47-Joinville</option>
+                <option value="48">48-Florianopolis</option>
+                <option value="51">51-Porto Alegre</option>
+                <option value="53">53-Pelotas</option>
+                <option value="54">54-Caxias do Soul</option>
+                <option value="55">55-Santa Maria</option>
+                <option value="61">61-Brasilia</option>
+                <option value="62">62-Santarem</option>
+                <option value="65">65-Varzea Grande</option>
+                <option value="67">67-Campo Grande</option>
+                <option value="68">68-Rio Branco</option>
+                <option value="69">69-Porto Velho</option>
+                <option value="71">71-Salvador</option>
+                <option value="73">73-Ilheus</option>
+                <option value="75">75-Feira de Santana</option>
+                <option value="77">77-Vitoria da Conquista</option>
+                <option value="79">79-Aracaju</option>
+                <option value="81">81-Recife</option>
+                <option value="82">82-Maceio</option>
+                <option value="83">83-Joao Pessoa</option>
+                <option value="84">84-Natal</option>
+                <option value="86">86-Teresina</option>
+                <option value="88">88-Fortaleza</option>
+                <option value="91">91-Goiania</option>
+                <option value="92">92-Manaus</option>
+                <option value="95">95-Boa Vista</option>
+                <option value="96">96-Macapa</option>
+                <option value="98">98-Sao Luis</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_months_in_the_job">Months in the job:</label>
+            <input type="number" name="months_in_the_job" min="0" id="id_months_in_the_job" required>
+        </p>
+
+        <p>
+            <label for="id_profession_code">Profession code:</label>
+            <select name="profession_code" id="id_profession_code" required>
+                <option value="0" selected="">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="Other">Other</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_occupation_type">Occupation type:</label>
+            <select name="occupation_type" id="id_occupation_type" required>
+                <option value="0" selected="">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="Other">Other</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_mate_profession_code">Mate profession code:</label>
+            <select name="mate_profession_code" id="id_mate_profession_code" required>
+                <option value="0" selected="">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="Other">Other</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_education_level_2">Mate education level:</label>
+            <select name="education_level_2" id="id_education_level_2" required>
+                <option value="0" selected="">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="Other">Other</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_flag_home_address_document">Flag home address document:</label>
+            <select name="flag_home_address_document" id="id_flag_home_address_document">
+                <option value="0">0</option>
+                <option value="1">1</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_flag_rg">Flag rg:</label>
+            <select name="flag_rg" id="id_flag_rg">
+                <option value="0">0</option>
+                <option value="1">1</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_flag_cpf">Flag cpf:</label>
+            <select name="flag_cpf" id="id_flag_cpf">
+                <option value="0">0</option>
+                <option value="1">1</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_flag_income_proof">Flag income proof:</label>
+            <select name="flag_income_proof" id="id_flag_income_proof">
+                <option value="0">0</option>
+                <option value="1">1</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_product">Product:</label>
+            <select name="product" id="id_product" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="7">7</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_flag_acsp_record">Flag acsp record:</label>
+            <select name="flag_acsp_record" id="id_flag_acsp_record" required>
+                <option value="1">Y</option>
+                <option value="0" selected="">N</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="id_age">Age:</label>
+            <input type="number" name="age" value="18" min="0" id="id_age" required>
+        </p>
+
+        
+        <p>
+            <label for="id_residencial_zip">Residencial zip:</label>
+            <input type="number" name="residencial_zip" min="0" id="id_residencial_zip" required>
+        </p>
+
+        <p>
+            <label for="id_professional_zip">Professional zip:</label>
+            <input type="number" name="professional_zip" min="0" id="id_professional_zip" required>
+        </p>
+        
+        <button type="submit" class="final_button">ASSESS</button>
+    
+    </form>
+
+    <footer>
+        <h6>Made by: <a href="https://www.linkedin.com/in/luispenaloza/en/">Luis Peñaloza</a></h6>
+    </footer>
+</body>
+
+</html>

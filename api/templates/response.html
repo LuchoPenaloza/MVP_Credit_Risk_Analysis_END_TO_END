@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <title>Application result</title>
+
+    <style>
+        header {
+            text-align: center;
+            font-weight: bold;
+            color: #548235;
+            padding-top: 1.5em;
+            padding-bottom: 1.5em;
+            background-color:#F4F9F1;
+        }
+
+        div {
+            color: #2F75B5;
+            font-weight: bold;
+            padding-top: 1.25em;
+            padding-left: 2.5em;
+            padding-bottom: 1.25em;
+            background-color:#DDEBF7;
+            text-align: center;
+            height: calc(100vh - 10em);
+        }
+
+        .final_result {
+            color: #548235;
+            font-size: larger;
+        }
+
+        footer {
+            text-align: right;
+            padding-top: 1em;
+            padding-bottom: 1em;
+            padding-right: 2em;
+            color: #548235;
+            background-color:#F4F9F1;
+        }
+    </style>
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1068.0" data-gr-ext-installed="">
+    <header>
+        <h1>CREDIT RISK SCORE - APPLICATION RESULT</h1>
+    </header>
+
+    <div>
+        <label for="subject">Full name: {{ context['full_name'] }} </label><br>
+        <label for="subject">DNI: {{ context['dni'] }} </label><br>
+        <label for="subject">Prediction: {{ context['prediction'] }} </label><br>
+        <label for="subject">Prediction Score: {{ context['prediction_proba'] }} </label><br>
+        <br>
+        <label for="subject" class="final_result">{{ context['target'] }} </label><br>
+    </div>
+
+    <footer>
+        <h6>Made by: <a href="https://www.linkedin.com/in/luispenaloza/en/">Luis Peñaloza</a></h6>
+    </footer>
+</body>
+</html>
